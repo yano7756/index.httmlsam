@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Te Amo, Samantha 💖</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #ffb6c1, #ff69b4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .te-amo {
+      position: absolute;
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+      animation: flotar 10s linear infinite;
+      opacity: 0.8;
+      text-shadow: 1px 1px 3px #c2185b;
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    .corazon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: subir 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    .corazon::before,
+    .corazon::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .corazon::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .corazon::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(100vh) rotate(45deg) scale(0.5);
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg) scale(1.2);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Música oculta desde YouTube -->
+<iframe width="0" height="0" src="https://www.youtube.com/embed/iwg6iG2nO6g?autoplay=1&loop=1&playlist=iwg6iG2nO6g" 
+frameborder="0" allow="autoplay" allowfullscreen></iframe>
+
+<script>
+  const frases = [
+    "Te amo, Samantha 💖",
+    "Eres mi todo, Samantha",
+    "Siempre tú, Samantha",
+    "Samantha, mi amor eterno",
+    "Contigo todo, sin ti nada 💘",
+    "Samantha 💞 Te adoro"
+  ];
+
+  for (let i = 0; i < 50; i++) {
+    let texto = document.createElement("div");
+    texto.classList.add("te-amo");
+    texto.textContent = frases[Math.floor(Math.random() * frases.length)];
+    texto.style.left = Math.random() * 100 + "vw";
+    texto.style.top = Math.random() * 100 + "vh";
+    texto.style.animationDuration = (6 + Math.random() * 5) + "s";
+    document.body.appendChild(texto);
+  }
+
+  for (let i = 0; i < 60; i++) {
+    let corazon = document.createElement("div");
+    corazon.classList.add("corazon");
+    corazon.style.left = Math.random() * 100 + "vw";
+    corazon.style.top = Math.random() * 100 + "vh";
+    corazon.style.animationDuration = (4 + Math.random() * 6) + "s";
+    document.body.appendChild(corazon);
+  }
+</script>
+
+</body>
+</html>
+
